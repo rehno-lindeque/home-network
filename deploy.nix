@@ -16,7 +16,8 @@ in
     imports = [
       ./rpi/configuration.nix
     ];
-    deployment.targetHost = "rpi";
+    deployment.targetHost = "192.168.0.13"; # at home
+    # deployment.targetHost = "rpi"; # at home
 
 
     # TODO Set NIX_PATH in such a way that nixos-rebuild can be run despite being deployed via nixops (helpful for cleaning up /boot via nixos-rebuild boot)
