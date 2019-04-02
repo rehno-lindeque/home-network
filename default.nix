@@ -14,6 +14,7 @@ let
         echo "rpi-up"
         echo "rpi-down"
         echo "rpi-ssh"
+        echo "rpi-reboot"
         '';
       home-ops = ''
         echo "${nixops}/bin/nixops $1 -s ${stateFilePath} -d home ''${@:2}"
@@ -27,6 +28,9 @@ let
         '';
       rpi-ssh = ''
         ${self.home-ops}/bin/home-ops ssh rpi $@
+        '';
+      rpi-reboot = ''
+        ${self.home-ops}/bin/home-ops reboot --include rpi $@
         '';
     });
 in
