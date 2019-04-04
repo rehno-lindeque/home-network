@@ -1,2 +1,3 @@
+/sdImage
 /secrets/localstate.nixops-shm
 /secrets/localstate.nixops-wal
