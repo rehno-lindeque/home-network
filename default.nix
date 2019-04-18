@@ -47,6 +47,8 @@ let
         echo
         echo 'use dd to copy the image to an sdcard'
         echo 'sudo dd bs=4M if=sdImage/sd-image/nixos-sd-image-18.09pre-git-x86_64-linux.img of=/dev/YOUR_SD_CARD conv=fsync'
+        echo 'sudo umount /dev/sdX?'
+        echo 'echo ", +" | sudo sfdisk -N 2 /dev/YOUR_SD_CARD'
         '';
       rpi-reboot = ''
         ${self.home-ops}/bin/home-ops reboot --include rpi $@
